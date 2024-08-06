@@ -1,0 +1,35 @@
+<nav class="custom-nav navbar fixed w-full z-10 inset-0 bg-slate-700 transition-all duration-300 ease-in-out" #navbar>
+  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+    <div class="relative flex h-16 items-center justify-between">
+      <a routerLink="/" class="rounded-md px-3 py-2 font-medium text-2xl text-white cursor-pointer uppercase">
+        Start Framework
+      </a>
+      <i class="fa fa-bars text-3xl text-yellow-50 cursor-pointer block sm:hidden" (click)="toggleMenu()"></i>
+      <!-- Menu items for large screens -->
+      <div class="hidden sm:flex sm:items-center sm:space-x-4">
+        <a routerLink="about" routerLinkActive="p-1 bg-teal-500" class="rounded-md px-3 py-2 text-sm font-medium text-white cursor-pointer">
+          About
+        </a>
+        <a routerLink="portfolio" routerLinkActive="p-1 bg-teal-500" class="rounded-md px-3 py-2 text-sm font-medium text-white cursor-pointer">
+          Portfolio
+        </a>
+        <a routerLink="contact" routerLinkActive="p-1 bg-teal-500" class="rounded-md px-3 py-2 text-sm font-medium text-white cursor-pointer">
+          Contact
+        </a>
+      </div>
+    </div>
+    <!-- Menu items for small screens -->
+    <div [ngClass]="{ 'hidden': !isMenuOpen, 'block': isMenuOpen }" class="sm:hidden transition-all duration-300 p-6 bg-slate-700 mt-0">
+      <a routerLink="about" routerLinkActive="p-1 bg-teal-500" class="block rounded-md px-3 py-2 text-sm font-medium text-white cursor-pointer">
+        About
+      </a>
+      
+      <a routerLink="portfolio" routerLinkActive="p-1 bg-teal-500" class="block rounded-md px-3 py-2 text-sm font-medium text-white cursor-pointer">
+        Portfolio
+      </a>
+      <a routerLink="contact" routerLinkActive="p-1 bg-teal-500" class="block rounded-md px-3 py-2 text-sm font-medium text-white cursor-pointer">
+        Contact
+      </a>
+    </div>
+  </div>
+</nav>

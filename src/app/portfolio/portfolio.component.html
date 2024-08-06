@@ -1,0 +1,32 @@
+<div class="flex justify-center items-center flex-col">
+    <div class="container mx-auto w-4/5">
+      <h2 class="text-center text-4xl uppercase font-bold mb-4 text-slate-700 pt-12 mt-12">portfolio component</h2>
+      <div class="flex justify-center items-center mb-12">
+        <span class="line bg-slate-700 border w-20 h-1"></span>
+        <i class="fa-solid text-slate-700 fa-star m-2"></i>
+        <span class="line bg-slate-700 border w-20 h-1"></span>
+      </div>
+
+      </div>
+      </div>
+      <div class="container mx-auto w-10/12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          @for (image of images; track image.pCode) {
+            <div class="relative group">
+              <img class="rounded-2xl cursor-pointer" [src]="image.src" [alt]="" >
+              <div class="absolute inset-0 w-full h-full bg-teal-500 bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 ease-in-out flex items-center justify-center rounded-2xl cursor-pointer" (click)="onImageClick(image)">
+                <i class="fa fa-plus text-6xl text-white p-2 hidden group-hover:block"></i>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+      
+      <div class="fixed inset-0 h-screen  justify-center items-center layer hidden" (click)="onClose($event)">
+        <div class="absolute inset-0 bg-cyan-500 bg-opacity-40"></div>
+        <div class="relative z-50" (click)="onImageClick2($event)">
+          <img src="./assets/img/port3.png" alt="" class="w-96">
+        </div>
+      </div>
+      
+

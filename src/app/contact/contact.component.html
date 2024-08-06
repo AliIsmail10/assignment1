@@ -1,0 +1,59 @@
+<div class="home flex justify-center items-center flex-col">
+  <div class="container mx-auto w-4/5">
+    <h2 class="text-center text-4xl uppercase font-bold mb-4 text-slate-700 pt-12 mt-12">Contact Section</h2>
+    <div class="flex justify-center items-center mb-12">
+      <span class="line bg-slate-700 border w-20 h-1"></span>
+      <i class="fa-solid text-slate-700 fa-star m-2"></i>
+      <span class="line bg-slate-700 border w-20 h-1"></span>
+    </div>
+    <div class="w-8/12 mx-auto">
+      <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+        <label [ngClass]="{'visible-label': userName, 'hidden-label': !userName}" for="userName" class="text-green-700 m-4 transition-all duration-700 text-sm">Username:</label>
+        <input
+          type="text"
+          name="userName"
+          placeholder="Username"
+          [(ngModel)]="userName"
+          class="w-full border-b-2 focus:outline-none m-4 placeholder:text-slate-600 text-sm"
+          id="userName"
+          required
+        />
+
+        <label [ngClass]="{'visible-label': userAge !== null, 'hidden-label': userAge === null}" for="userAge" class="text-green-700 m-4 transition-all duration-700">Age:</label>
+        <input
+          type="number"
+          name="userAge"
+          placeholder="Age"
+          [(ngModel)]="userAge"
+          class="w-full border-b-2 focus:outline-none m-4 placeholder:text-slate-600 text-sm"
+          id="userAge"
+          required
+        />
+
+        <label [ngClass]="{'visible-label': userEmail, 'hidden-label': !userEmail}" for="userEmail" class="text-green-700 m-4 transition-all duration-700">Email:</label>
+        <input
+          type="email"
+          name="userEmail"
+          placeholder="Email"
+          [(ngModel)]="userEmail"
+          class="w-full border-b-2 focus:outline-none m-4 placeholder:text-slate-600 text-sm"
+          id="userEmail"
+          required
+        />
+
+        <label [ngClass]="{'visible-label': userPassword, 'hidden-label': !userPassword}" for="userPassword" class="text-green-700 m-4 transition-all duration-700">Password:</label>
+        <input
+          type="password"
+          name="userPassword"
+          placeholder="Password"
+          [(ngModel)]="userPassword"
+          class="w-full border-b-2 focus:outline-none m-4 placeholder:text-slate-600 text-sm"
+          id="userPassword"
+          required
+        />
+
+        <button type="submit" class="bg-teal-600 text-white py-1 px-6 cursor-pointer rounded my-8 ms-4">Send Message</button>
+      </form>
+    </div>
+  </div>
+</div>

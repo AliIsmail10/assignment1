@@ -1,0 +1,15 @@
+/* Hide labels but keep space reserved */
+.hidden-label {
+    opacity: 0;
+    height: 0;
+    visibility: hidden; 
+    transition: opacity 0.7s ease, height 0.7s ease;
+  }
+  
+  .visible-label {
+    opacity: 1;
+    height: auto; 
+    visibility: visible; 
+    transition: opacity 0.7s ease, height 0.7s ease;
+  }
+  
